@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+
+# Equipment Module - This module can provide information on the equipment that will be used to manufacture the replacement parts.
+
+# Define classes
+ammo:Equipment a owl:Class ;
+    rdfs:label "Equipment" ;
+    rdfs:comment "A physical device used for the manufacturing of replacement parts." ;
+    oplax:definedInModule ammo:equipment_module .
+
+ammo:EquipmentComponent a owl:Class ;
+    rdfs:label "Equipment Component" ;
+    rdfs:comment "A part or subassembly of an equipment." ;
+    oplax:definedInModule ammo:equipment_module .
+
+# Define properties
+ammo:hasEquipmentComponent a owl:ObjectProperty ;
+    rdfs:label "has equipment component" ;
+    rdfs:comment "Relates an equipment to its components." ;
+    rdfs:range ammo:EquipmentComponent ;
+    rdfs:domain ammo:Equipment ;
+    oplax:definedInModule ammo:equipment_module .
+
+ammo:hasEquipmentModel a owl:ObjectProperty ;
+    rdfs:label "has equipment model" ;
+    rdfs:comment "Relates an equipment to its model." ;
+    rdfs:range xsd:string ;
+    rdfs:domain ammo:Equipment ;
+    oplax:definedInModule ammo:equipment_module .
+
+ammo:hasManufacturer a owl:ObjectProperty ;
+    rdfs:label "has manufacturer" ;
+    rdfs:comment "Relates an equipment to its manufacturer." ;
+    rdfs:range xsd:string ;
+    rdfs:domain ammo:Equipment ;
+    oplax:definedInModule ammo:equipment_module .
+
+# Add more classes, properties, and individuals as needed.
+
+# OPLaX annotation for the module:
+ammo:equipment_module a oplax:Module ;
+    rdfs:label "Equipment Module" ;
+    rdfs:comment "This module can provide information on the equipment that will be used to manufacture the replacement parts." .
+
+# Usage example: To use this module in the ontology, import this file into the main ontology file.

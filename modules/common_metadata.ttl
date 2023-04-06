@@ -8,30 +8,32 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix your-prefix: <https://w3id.org/your-ontology-uri/> .
-@prefix your-modules: <https://w3id.org/your-ontology-uri/modules/> .
-@prefix your-patterns: <https://w3id.org/your-ontology-uri/patterns/> .
-@prefix your-shacl: <https://w3id.org/your-ontology-uri/shacl/> .
+@prefix your-prefix: <https://w3id.org/ammo/ont/> .
 
-
-# Ontology metadata - this module contains common metadata about your ontology, including its name, description, version info, creators, and license.
-
-<https://w3id.org/your-ontology-uri> rdf:type owl:Ontology ;
-    dct:title "Your Ontology Name" ;
-    dct:description "A short description of your ontology." ;
+<https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
+    dct:title "Additive Manufacturing Maintenance Ontology" ;
+    dct:description "An ontology for additive manufacturing maintenance operations in the context of the US military." ;
     dct:creator [
-        foaf:name "Your Name";
-        foaf:mbox "mailto:you@example.com"
+        foaf:name "Charles Vardeman";
+        foaf:mbox "mailto:cvardeman@example.com"
     ] ;
     dct:contributor [ foaf:name "Another Contributor" ;
                       foaf:mbox <mailto:another.contributor@example.org> ] ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    vann:preferredNamespacePrefix "your-prefix" ;
-    vann:preferredNamespaceUri "https://w3id.org/your-ontology-uri#" ;
-    owl:versionInfo "1.0" ;
-    owl:imports <https://w3id.org/your-ontology-uri/modules/common_metadata> ;
-    void:vocabulary "https://w3id.org/your-ontology-uri" ;
-    dct:publisher <https://w3id.org/your-ontology-uri/publisher> ;
-    dct:issued "2023-03-17"^^xsd:date ;
-    dct:modified "2023-03-17"^^xsd:date ;
-    skos:definition "A detailed description of your ontology, including its purpose, scope, and intended audience." .
+    vann:preferredNamespacePrefix "ammo" ;
+    vann:preferredNamespaceUri "https://w3id.org/ammo/ont#" ;
+    owl:versionInfo "2.0" ;
+    owl:imports <https://w3id.org/ammo/ont/modules/equipment>,
+        <https://w3id.org/ammo/ont/modules/materials>,
+        <https://w3id.org/ammo/ont/modules/processes>,
+        <https://w3id.org/ammo/ont/modules/maintenance_tasks>,
+        <https://w3id.org/ammo/ont/modules/failure_modes_and_effects>,
+        <https://w3id.org/ammo/ont/modules/quality_control_and_inspection>,
+        <https://w3id.org/ammo/ont/modules/human_roles>,
+        <https://w3id.org/ammo/ont/modules/regulations_and_standards>,
+        <https://w3id.org/ammo/ont/modules/safety_and_environmental_considerations> ;
+    void:vocabulary "https://w3id.org/ammo/ont" ;
+    dct:publisher <https://w3id.org/ammo/ont/publisher> ;
+    dct:issued "2023-04-06"^^xsd:date ;
+    dct:modified "2023-04-06"^^xsd:date ;
+    skos:definition "An ontology for additive manufacturing maintenance operations in the context of the US military." .
