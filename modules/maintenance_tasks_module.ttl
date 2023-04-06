@@ -1,0 +1,37 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+
+# Maintenance Tasks Module
+# This module provides information on the maintenance tasks that will be performed on the equipment used to manufacture the replacement parts.
+
+# Classes
+ammo:MaintenanceTask a owl:Class ;
+    rdfs:label "Maintenance Task" ;
+    rdfs:comment "A maintenance task that is performed on the equipment used to manufacture replacement parts." ;
+    oplax:definedInModule ammo:MaintenanceTasks .
+
+# Properties
+ammo:hasTaskDescription a owl:DatatypeProperty ;
+    rdfs:label "has task description" ;
+    rdfs:comment "A description of the maintenance task." ;
+    rdfs:domain ammo:MaintenanceTask ;
+    rdfs:range xsd:string ;
+    oplax:definedInModule ammo:MaintenanceTasks .
+
+ammo:hasTaskDuration a owl:DatatypeProperty ;
+    rdfs:label "has task duration" ;
+    rdfs:comment "The expected duration of the maintenance task." ;
+    rdfs:domain ammo:MaintenanceTask ;
+    rdfs:range xsd:duration ;
+    oplax:definedInModule ammo:MaintenanceTasks .
+
+# Add more classes and properties as needed
+
+# OPLaX annotation for the module:
+ammo:MaintenanceTasks a oplax:Module ;
+    rdfs:label "Maintenance Tasks Module" ;
+    rdfs:comment "This module provides information on the maintenance tasks that will be performed on the equipment used to manufacture the replacement parts." .

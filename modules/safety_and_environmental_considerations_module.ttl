@@ -1,0 +1,36 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+
+# Safety and Environmental Considerations Module
+ammo:hasEnvironmentalImpact a owl:ObjectProperty ;
+    rdfs:label "has environmental impact" ;
+    rdfs:comment "Describes the environmental impact of a part, material or process." ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ammo:EnvironmentalImpact .
+
+ammo:EnvironmentalImpact a owl:Class ;
+    rdfs:label "Environmental Impact" ;
+    rdfs:comment "Describes the environmental impact of a part, material or process." ;
+    oplax:definedInModule ammo:SafetyAndEnvironmentalConsiderationsModule .
+
+ammo:hasSafetyImpact a owl:ObjectProperty ;
+    rdfs:label "has safety impact" ;
+    rdfs:comment "Describes the safety impact of a part, material or process." ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ammo:SafetyImpact .
+
+ammo:SafetyImpact a owl:Class ;
+    rdfs:label "Safety Impact" ;
+    rdfs:comment "Describes the safety impact of a part, material or process." ;
+    oplax:definedInModule ammo:SafetyAndEnvironmentalConsiderationsModule .
+
+# Add more classes, properties, and individuals as needed.
+
+# OPLaX annotation for the module:
+ammo:SafetyAndEnvironmentalConsiderationsModule a oplax:Module ;
+    rdfs:label "Safety and Environmental Considerations" ;
+    rdfs:comment "Module providing information on safety and environmental considerations for replacement parts." .

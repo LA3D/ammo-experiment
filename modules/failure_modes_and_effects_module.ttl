@@ -1,0 +1,34 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+
+# Failure Modes and Effects Module
+
+ammo:FailureMode a owl:Class ;
+    rdfs:label "Failure Mode" ;
+    rdfs:comment "A failure mode is a physical, chemical, or other defect that could occur in a manufactured part." ;
+    oplax:definedInModule ammo:failure_modes_and_effects .
+
+ammo:Effect a owl:Class ;
+    rdfs:label "Effect" ;
+    rdfs:comment "An effect is the consequence or impact of a failure mode." ;
+    oplax:definedInModule ammo:failure_modes_and_effects .
+
+ammo:failureModeHasEffect a owl:ObjectProperty ;
+    rdfs:label "has effect" ;
+    rdfs:comment "Relates a failure mode to an effect." ;
+    rdfs:domain ammo:FailureMode ;
+    rdfs:range ammo:Effect ;
+    oplax:definedInModule ammo:failure_modes_and_effects .
+
+# Add more classes, properties, and individuals as needed.
+
+# OPLaX annotation for the module:
+ammo:failure_modes_and_effects a oplax:Module ;
+    rdfs:label "Failure Modes and Effects" ;
+    rdfs:comment "This module provides information on the potential failure modes and effects of the replacement parts." .
+
+# Usage example: To use this module in the ontology, import this file into the main ontology file.

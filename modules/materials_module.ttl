@@ -1,0 +1,48 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+
+# Materials Module - This module provides information on the materials used to manufacture the replacement parts.
+
+# Define classes and subclasses of materials
+ammo:Material a owl:Class ;
+    rdfs:label "Material" ;
+    rdfs:comment "A material that can be used to manufacture replacement parts." ;
+    oplax:definedInModule ammo:materials_module .
+
+ammo:Metal a owl:Class ;
+    rdfs:label "Metal" ;
+    rdfs:comment "A type of material that is typically used for high-stress applications." ;
+    rdfs:subClassOf ammo:Material ;
+    oplax:definedInModule ammo:materials_module .
+
+ammo:Plastic a owl:Class ;
+    rdfs:label "Plastic" ;
+    rdfs:comment "A type of material that is typically used for low-stress applications." ;
+    rdfs:subClassOf ammo:Material ;
+    oplax:definedInModule ammo:materials_module .
+
+# Define properties of materials
+ammo:density a owl:DatatypeProperty ;
+    rdfs:label "Density" ;
+    rdfs:comment "The density of the material, typically measured in g/cm^3." ;
+    rdfs:domain ammo:Material ;
+    rdfs:range xsd:float ;
+    oplax:definedInModule ammo:materials_module .
+
+ammo:tensileStrength a owl:DatatypeProperty ;
+    rdfs:label "Tensile Strength" ;
+    rdfs:comment "The maximum stress that the material can withstand before failure, typically measured in MPa." ;
+    rdfs:domain ammo:Material ;
+    rdfs:range xsd:float ;
+    oplax:definedInModule ammo:materials_module .
+
+# Add more properties and subclasses as needed.
+
+# OPLaX annotation for the module:
+ammo:materials_module a oplax:Module ;
+    rdfs:label "Materials Module" ;
+    rdfs:comment "This module provides information on the materials used to manufacture the replacement parts." .

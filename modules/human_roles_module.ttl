@@ -1,0 +1,22 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+
+# Human Roles Module - This module provides information on the roles of personnel involved in the additive manufacturing process.
+
+# Class: PersonnelRole
+ammo:PersonnelRole a owl:Class ;
+    rdfs:label "Personnel Role" ;
+    rdfs:comment "A role that a person can have in the additive manufacturing process." ;
+    oplax:definedInModule ammo:human_roles_module .
+
+# Property: hasPersonnelRole
+ammo:hasPersonnelRole a owl:ObjectProperty ;
+    rdfs:label "has Personnel Role" ;
+    rdfs:comment "A property that links a person to a role they have in the additive manufacturing process." ;
+    rdfs:domain ammo:Person ;
+    rdfs:range ammo:PersonnelRole ;
+    oplax:definedInModule ammo:human_roles_module .

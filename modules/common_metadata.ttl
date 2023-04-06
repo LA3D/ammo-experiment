@@ -8,7 +8,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix your-prefix: <https://w3id.org/ammo/ont/> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
 
 <https://w3id.org/ammo/ont/> rdf:type owl:Ontology ;
     dct:title "Additive Manufacturing Maintenance Ontology" ;

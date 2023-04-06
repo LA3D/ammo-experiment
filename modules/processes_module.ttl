@@ -1,0 +1,31 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+
+# Processes Module - This module can provide information on the 3D printing processes that will be used to manufacture the replacement parts.
+
+# Add classes, properties, and individuals related to the processes involved in additive manufacturing.
+
+# Usage example: To use this module in the ontology, import this file into the main ontology file.
+
+# OPLaX annotation for the module:
+ammo:ProcessesModule a oplax:Module ;
+    rdfs:label "Processes Module" ;
+    rdfs:comment "This module can provide information on the 3D printing processes that will be used to manufacture the replacement parts." .
+
+ammo:ProcessClass a owl:Class ;
+    rdfs:label "Process Class" ;
+    rdfs:comment "A class to represent the additive manufacturing process used to manufacture replacement parts." ;
+    oplax:definedInModule your-prefix:ProcessesModule .
+
+ammo:processProperty a owl:ObjectProperty ;
+    rdfs:label "process property" ;
+    rdfs:comment "A property to link replacement parts with the additive manufacturing process used to create them." ;
+    rdfs:domain your-prefix:ReplacementPart ;
+    rdfs:range your-prefix:ProcessClass ;
+    oplax:definedInModule your-prefix:ProcessesModule .
+    
+# Add more classes, properties, and individuals as needed.

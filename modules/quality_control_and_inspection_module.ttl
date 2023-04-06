@@ -1,0 +1,21 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+
+# Quality Control and Inspection module
+ammo:QualityControlInspection a owl:Class ;
+    rdfs:label "Quality Control and Inspection" ;
+    rdfs:comment "This module provides information on the quality control and inspection procedures that will be used to ensure the manufactured parts meet the required specifications." ;
+    oplax:definedInModule ammo:quality_control_inspection_module .
+
+# Add more classes, properties, and individuals as needed.
+
+# Usage example: To use this module in the ontology, import this file into the main ontology file.
+
+# OPLaX annotation for the module:
+ammo:quality_control_inspection_module a oplax:Module ;
+    rdfs:label "Quality Control and Inspection Module" ;
+    rdfs:comment "This module provides information on the quality control and inspection procedures that will be used to ensure the manufactured parts meet the required specifications." .

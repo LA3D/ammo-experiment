@@ -1,0 +1,41 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix oplax: <http://www.ontologydesignpatterns.org/oplax/> .
+@prefix schema: <http://schema.org/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix ammo: <https://w3id.org/ammo/ont/> .
+
+# Ontology module for Regulations and Standards
+# This module provides information about the regulations and standards that must be met for the replacement parts to be considered safe and compliant.
+
+# Classes
+ammo:Regulation a owl:Class ;
+    rdfs:label "Regulation" ;
+    rdfs:comment "A regulation that must be met for the replacement parts to be considered safe and compliant." ;
+    oplax:definedInModule ammo:RegulationsAndStandards .
+
+ammo:Standard a owl:Class ;
+    rdfs:label "Standard" ;
+    rdfs:comment "A standard that must be met for the replacement parts to be considered safe and compliant." ;
+    oplax:definedInModule ammo:RegulationsAndStandards .
+
+# Properties
+ammo:compliesWith a owl:ObjectProperty ;
+    rdfs:label "complies with" ;
+    rdfs:comment "The regulation or standard that must be met for the replacement parts to be considered safe and compliant." ;
+    rdfs:domain ammo:Regulation ;
+    rdfs:domain ammo:Standard ;
+    rdfs:range schema:CreativeWork ;
+    oplax:definedInModule ammo:RegulationsAndStandards .
+
+# Add more classes, properties, and individuals as needed.
+
+# Usage example: To use this module in the ontology, import this file into the main ontology file.
+
+# OPLaX annotation for the module:
+ammo:RegulationsAndStandards a oplax:Module ;
+    rdfs:label "Regulations and Standards" ;
+    rdfs:comment "This module provides information about the regulations and standards that must be met for the replacement parts to be considered safe and compliant." .
+
